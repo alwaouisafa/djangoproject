@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1>Add a new book</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy}}
+<!--<table>
+        <tr>
+            <td>{{ form.title.label_tag }}</td>
+            <td>{{ form.title }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.quantity.label_tag }}</td>
+            <td>{{ form.quantity }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.author.label_tag }}</td>
+            <td>{{ form.author }}</td>
+        </tr>
+    </table>
+    {% if form.quantity.errors %}
+    <div style="color: red;">
+        {{ form.quantity.errors }}
+    </div>
+    {% endif %}
+    {% if form.non_field_errors %}
+    <div style="color: orange;">
+        {{ form.non_field_errors }}
+    </div>
+    {% endif %}-->
+    <input type="submit" value="Validate" class="btn btn-primary">
+</form>
+{% endblock %}
